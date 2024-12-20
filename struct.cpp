@@ -28,29 +28,44 @@ mahasiswa sikc[30];
 int pos=-1;
 
 void input_data(){
-    system("cls");
-    cout << "Masukkan jumlah data: ";
-    cin >> n;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    for (int i = 0; i < n; i++) {
-        pos++;
-        system("cls"); // Membersihkan layar
-        cout << "Masukkan data ke-" << i + 1 << ":\n";
+  system("cls");
+  cout << "Masukkan jumlah data: ";
+  cin >> n;
+  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+  for (int i = 0; i < n; i++) {
+      pos++;
+      system("cls"); // Membersihkan layar
+      cout << "Masukkan data ke-" << i + 1 << ":\n";
 
-        cout << "Masukkan NIM: ";
-        getline(cin, sikc[pos].nim);
+      cout << "Masukkan NIM: ";
+      getline(cin, sikc[pos].nim);
 
-        cout << "Masukkan Nama: ";
-        getline(cin, sikc[pos].nama);
+      cout << "Masukkan Nama: ";
+      getline(cin, sikc[pos].nama);
 
-        cout << "Masukkan Alamat: ";
-        getline(cin, sikc[pos].alamat);
+      cout << "Masukkan Alamat: ";
+      getline(cin, sikc[pos].alamat);
 
-        cout << "Masukkan IPK: ";
-        cin >> sikc[pos].ipk;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    }
+      cout << "Masukkan IPK: ";
+      cin >> sikc[pos].ipk;
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+  }
 }
+
+void tampil_data(int n){
+  system("cls");
+  cout<<"Data yang telah dimasukan: "<<endl;
+  for(int i=0; i<n; i++){
+      cout << "Data ke-" << i + 1 << ":\n";
+      cout << "NIM    : " << sikc[i].nim << "\n";
+      cout << "Nama   : " << sikc[i].nama << "\n";
+      cout << "Alamat : " << sikc[i].alamat << "\n";
+      cout << "IPK    : " << sikc[i].ipk << "\n\n";
+  }
+    getch();
+}
+
+
 
 int main() {
 char pl;
@@ -64,12 +79,10 @@ do
     input_data();
     break;
    case '2':
-    
-    /* code */ 
+    tampil_data(n);
     break;  
    case '3':
     
-    /* code */
     break;  
    case '4':
     
