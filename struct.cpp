@@ -53,7 +53,7 @@ void tampil_data(int n){
   system("cls");
   cout<<"Data yang telah dimasukan: "<<endl;
   for(int i=0; i<n; i++){
-      cout << "Data ke-" << i + 1 << ":\n";
+      cout << "Index Data ke-" << i  << ":\n";
       cout << "NIM    : " << sikc[i].nim << "\n";
       cout << "Nama   : " << sikc[i].nama << "\n";
       cout << "Alamat : " << sikc[i].alamat << "\n";
@@ -62,7 +62,7 @@ void tampil_data(int n){
 }
 
 void ubah_data(int p){
-  cout << "Masukkan Index data yang ingin diubah: ";
+  cout << "Masukkan Index Data yang ingin diubah: ";
   cin >> x;
   cin.ignore(numeric_limits<streamsize>::max(), '\n');
   system("cls");
@@ -76,8 +76,6 @@ void ubah_data(int p){
   cin.ignore(numeric_limits<streamsize>::max(), '\n');
   cout << "Data berhasil diubah!\n";
 }
-
-
 int main() {
 char pl;
 do
@@ -99,11 +97,8 @@ do
     getch();
     break;  
    case '4':
-    
-    /* code */
     break;  
   case '5':
-    /* code */
     break;
   
   default:
