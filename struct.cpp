@@ -3,6 +3,7 @@
 #include <string>
 using namespace std;
 int n;
+int u;
 int x;
 
 void dMenu(){
@@ -62,9 +63,6 @@ void tampil_data(){
 }
 
 void ubah_data(int p){
-  cout << "Masukkan Index Data yang ingin diubah: ";
-  cin >> x;
-  cin.ignore(numeric_limits<streamsize>::max(), '\n');
   system("cls");
   fflush(stdin);
   cout << "Masukkan Nama: ";
@@ -105,7 +103,10 @@ do
     break;  
    case '3':
     tampil_data();
-    ubah_data(x);
+    cout << "Masukkan Index Data yang ingin diubah: ";
+    cin >> u;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    ubah_data(u);
     getch();
     break;  
    case '4':
