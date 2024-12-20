@@ -1,5 +1,6 @@
 #include <iostream>
 #include <conio.h>
+#include <string>
 using namespace std;
 int n;
 
@@ -15,6 +16,41 @@ cout<<"Masukan angka :";
 
 }
 
+struct mahasiswa {
+string nim;
+string nama;
+string alamat;
+float ipk;
+};
+
+mahasiswa sikc[30];
+
+int pos=-1;
+
+void input_data(){
+    system("cls");
+    cout << "Masukkan jumlah data: ";
+    cin >> n;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    for (int i = 0; i < n; i++) {
+        pos++;
+        system("cls"); // Membersihkan layar
+        cout << "Masukkan data ke-" << i + 1 << ":\n";
+
+        cout << "Masukkan NIM: ";
+        getline(cin, sikc[pos].nim);
+
+        cout << "Masukkan Nama: ";
+        getline(cin, sikc[pos].nama);
+
+        cout << "Masukkan Alamat: ";
+        getline(cin, sikc[pos].alamat);
+
+        cout << "Masukkan IPK: ";
+        cin >> sikc[pos].ipk;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+}
 
 int main() {
 char pl;
@@ -25,8 +61,7 @@ do
   switch (pl)
   {
    case '1':
-    /* code */
-    
+    input_data();
     break;
    case '2':
     
