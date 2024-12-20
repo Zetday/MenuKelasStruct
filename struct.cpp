@@ -49,10 +49,10 @@ void input_data(){
   }
 }
 
-void tampil_data(int n){
+void tampil_data(){
   system("cls");
   cout<<"Data yang telah dimasukan: "<<endl;
-  for(int i=0; i<n; i++){
+  for(int i=0; i<=pos; i++){
       cout << "Index Data ke-" << i  << ":\n";
       cout << "NIM    : " << sikc[i].nim << "\n";
       cout << "Nama   : " << sikc[i].nama << "\n";
@@ -76,6 +76,18 @@ void ubah_data(int p){
   cin.ignore(numeric_limits<streamsize>::max(), '\n');
   cout << "Data berhasil diubah!\n";
 }
+
+void hapus_data() {
+  cout << "Masukkan Index data yang ingin dihapus: ";
+  cin >> x;
+  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+  for (int i = x; i < pos; i++) {
+        sikc[i] = sikc[i + 1];
+    }
+      pos--;
+      cout << "Data berhasil dihapus!\n";
+}
+
 int main() {
 char pl;
 do
@@ -88,15 +100,18 @@ do
     input_data();
     break;
    case '2':
-    tampil_data(n);
+    tampil_data();
     getch();
     break;  
    case '3':
-    tampil_data(n);
+    tampil_data();
     ubah_data(x);
     getch();
     break;  
    case '4':
+    tampil_data();
+    hapus_data();
+    getch();
     break;  
   case '5':
     break;
